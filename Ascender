@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class WordAscender {
+    public static void main(String[] args) {
+        
+        Scanner scanner = new Scanner(System.in);
+        
+        
+        
+        String inputWord = scanner.nextLine();
+        
+        
+        String upperCaseWord = convertToUpperCase(inputWord);
+        
+        
+        System.out.println("Word Ascension Achieved! Behold the majestic transformation: " + upperCaseWord + ".");
+        
+        
+        scanner.close();
+    }
+    
+    private static String convertToUpperCase(String word) {
+        char[] chars = word.toCharArray();
+        
+        for (int i = 0; i < chars.length; i++) {
+           
+            if (chars[i] >= 'a' && chars[i] <= 'z') {
+                
+                chars[i] = (char) (chars[i] - ('a' - 'A'));
+            }
+        }
+        
+        
+        return new String(chars);
+    }
+}
